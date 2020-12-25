@@ -1,0 +1,84 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:jsdoc/recommended"
+    ],
+    "env": {
+        "node": true,
+        "mocha": true,
+        "es6": true
+    },
+    "globals": {
+        "XMLHttpRequest": "readonly"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.js"
+            ],
+            "env": {
+                "jest": true
+            },
+            "plugins": [
+                "jest",
+                "jest-formatting"
+            ],
+            "rules": {
+                "jest/no-disabled-tests": "warn",
+                "jest/no-focused-tests": "error",
+                "jest/no-identical-title": "error",
+                "jest/prefer-to-have-length": "warn",
+                "jest/valid-expect": "error"
+            }
+        }
+    ],
+    "plugins": [
+        "jest",
+        "modules",
+        "import",
+        "jsdoc"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {}
+    },
+    "rules": {
+        "import/imports-first": 0,
+        "import/newline-after-import": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/no-named-as-default": 0,
+        "import/no-unresolved": 2,
+        "import/prefer-default-export": 0,
+        "indent": [ 2, 4, { "SwitchCase": 1 } ],
+        "jsdoc/newline-after-description": 0,
+        "max-len": 0,
+        "newline-per-chained-call": 0,
+        "no-console": 1,
+        "no-useless-constructor": 1,
+        "no-use-before-define": 0,
+        "prefer-template": 2,
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true
+            }
+        }],
+        "require-yield": 0,
+        "semi": 1,
+        "valid-jsdoc": [1, {
+            "requireReturn": false
+        }]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js"]
+            }
+        }
+    }
+}

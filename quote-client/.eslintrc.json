@@ -1,0 +1,109 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:react/recommended",
+      "plugin:jsdoc/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "overrides": [
+      {
+          "files": [
+              "**/*.test.js"
+          ],
+          "env": {
+              "jest": true
+          },
+          "plugins": [
+              "jest",
+              "jest-formatting"
+          ],
+          "rules": {
+              "jest/no-disabled-tests": "warn",
+              "jest/no-focused-tests": "error",
+              "jest/no-identical-title": "error",
+              "jest/prefer-to-have-length": "warn",
+              "jest/valid-expect": "error"
+          }
+      }
+  ],
+  "plugins": [
+    "react",
+    "import",
+    "jsx-a11y",
+    "jest",
+    "modules",
+    "jsdoc"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    /* "arrow-body-style": [
+      2,
+      "as-needed"
+    ], */
+    /* "comma-dangle": [
+      2,
+      "always-multiline"
+    ], */
+    "import/imports-first": 0,
+    "import/newline-after-import": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/no-unresolved": 2,
+    "import/prefer-default-export": 0,
+    "indent": [ 2, 4, { "SwitchCase": 1 } ],
+    "jsdoc/newline-after-description": 0,
+    "jsx-a11y/aria-props": 2,
+    "jsx-a11y/heading-has-content": 0,
+    /* "jsx-a11y/href-no-hash": 2, */
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "max-len": 0,
+    "newline-per-chained-call": 0,
+    "no-console": 1,
+    "no-useless-constructor": 1,
+    "no-use-before-define": 0,
+    "prefer-template": 2,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/require-extension": 0,
+    "react/self-closing-comp": 0,
+    "require-jsdoc": ["error", {
+        "require": {
+            "FunctionDeclaration": true,
+            "MethodDefinition": true,
+            "ClassDeclaration": true
+        }
+    }],
+    "require-yield": 0,
+    "semi": 1,
+    "valid-jsdoc": [1, {
+        "requireReturn": false
+    }]
+  },
+  "settings": {
+    "react": {
+      "version": "16"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
+}
