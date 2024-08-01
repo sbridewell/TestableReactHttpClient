@@ -21,8 +21,6 @@ namespace QuoteService
         {
             services.AddCors();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
             // Stuff for Swagger to expose API documentation...
             services.AddSwaggerGen(c =>
             {
